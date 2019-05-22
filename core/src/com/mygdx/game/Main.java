@@ -7,7 +7,6 @@ import com.mygdx.game.Scenes.IntroScene;
 
 public class Main extends ApplicationAdapter
 {
-
 	private SceneManager sceneManager;
 	private SpriteBatch batch;
 

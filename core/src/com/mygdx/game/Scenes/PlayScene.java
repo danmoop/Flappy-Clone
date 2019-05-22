@@ -7,14 +7,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Manager.Scene;
 import com.mygdx.game.Manager.SceneManager;
 import com.mygdx.game.Model.Background;
+import com.mygdx.game.Model.Bird;
 
 public class PlayScene implements Scene
 {
     private Background background;
-
     private SceneManager manager;
+    private Bird bird;
 
-    public PlayScene(SceneManager manager)
+    PlayScene(SceneManager manager)
     {
         this.manager = manager;
     }
@@ -23,6 +24,7 @@ public class PlayScene implements Scene
     public void start()
     {
         background = new Background(new Texture("bg.jpg"));
+        bird = new Bird(new Texture("bird.png"));
 
         System.out.println(getClass().getName() + " started");
     }
@@ -31,6 +33,7 @@ public class PlayScene implements Scene
     public void update()
     {
         background.update();
+        bird.update();
     }
 
     @Override
@@ -42,6 +45,7 @@ public class PlayScene implements Scene
         batch.begin();
 
         background.render(batch);
+        bird.render(batch);
 
         batch.end();
     }
@@ -54,6 +58,9 @@ public class PlayScene implements Scene
     @Override
     public void dispose()
     {
+        System.out.println(getClass().getName() + " disposed");
+
         background.dispose();
+        bird.dispose();
     }
 }

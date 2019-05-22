@@ -19,6 +19,8 @@ public class SceneManager
         }
         else
         {
+            scenes.peek().dispose();
+
             scenes.pop();
             scenes.add(scene);
         }

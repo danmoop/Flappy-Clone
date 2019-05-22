@@ -4,10 +4,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class Background
+public class Background implements GameObject
 {
-    private BackgroundComponent[] backgroundComponents;
     private final int SPEED = 3;
+    private BackgroundComponent[] backgroundComponents;
     private Texture texture;
 
     public Background(Texture texture)
@@ -16,10 +16,11 @@ public class Background
 
         backgroundComponents = new BackgroundComponent[] {
                 new BackgroundComponent(new Vector2(0, 0)),
-                new BackgroundComponent(new Vector2(640, 0))
+                new BackgroundComponent(new Vector2(426, 0))
         };
     }
 
+    @Override
     public void update()
     {
         for (BackgroundComponent backgroundComponent : backgroundComponents)
@@ -27,13 +28,14 @@ public class Background
             backgroundComponent.pos.x -= SPEED;
         }
 
-        if(backgroundComponents[0].pos.x <= -640)
+        if(backgroundComponents[0].pos.x <= -426)
         {
             backgroundComponents[0].pos.x = 0;
-            backgroundComponents[1].pos.x = 640;
+            backgroundComponents[1].pos.x = 426;
         }
     }
 
+    @Override
     public void render(SpriteBatch batch)
     {
         for (BackgroundComponent backgroundComponent : backgroundComponents)
@@ -42,6 +44,7 @@ public class Background
         }
     }
 
+    @Override
     public void dispose()
     {
         texture.dispose();
