@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Manager.Scene;
 import com.mygdx.game.Manager.SceneManager;
 
-public class IntroScene implements Scene
+public class IntroScene extends Scene
 {
     private SceneManager manager;
 
@@ -54,10 +54,9 @@ public class IntroScene implements Scene
 
         batch.draw(
                 bird,
-                Gdx.graphics.getWidth() / 2f - playButton.getWidth() / 2f,
-                Gdx.graphics.getHeight() / 2f - playButton.getHeight() / 2f + playButton.getHeight(),
-                playButton.getWidth(),
-                playButton.getHeight()
+                Gdx.graphics.getWidth() / 2f - 75,
+                Gdx.graphics.getHeight() / 2f + 150,
+                150,150
         );
 
         batch.end();

@@ -1,0 +1,4 @@
+#Thu May 23 14:23:01 MSK 2019
+base.0=D\:\\APPS\\LIBGDX\\android\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

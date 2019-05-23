@@ -38,7 +38,7 @@ ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:5:5-22:19
 activity#com.mygdx.game.AndroidLauncher
 ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:12:9-21:20
 	android:screenOrientation
-		ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:15:13-50
+		ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:15:13-49
 	android:label
 		ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:14:13-45
 	android:configChanges

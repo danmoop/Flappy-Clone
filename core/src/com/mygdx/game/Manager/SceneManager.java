@@ -25,7 +25,7 @@ public class SceneManager
             scenes.add(scene);
         }
 
-        getActiveScene().start();
+        scenes.peek().start();
     }
 
     public Scene getActiveScene()

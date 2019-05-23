@@ -2,18 +2,19 @@ package com.mygdx.game.Scenes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.GameObjects.Background;
+import com.mygdx.game.GameObjects.Bird;
+import com.mygdx.game.GameObjects.Obstacles;
 import com.mygdx.game.Manager.Scene;
 import com.mygdx.game.Manager.SceneManager;
-import com.mygdx.game.Model.Background;
-import com.mygdx.game.Model.Bird;
 
-public class PlayScene implements Scene
+public class PlayScene extends Scene
 {
     private Background background;
     private SceneManager manager;
     private Bird bird;
+    private Obstacles obstacles;
 
     PlayScene(SceneManager manager)
     {
@@ -23,8 +24,9 @@ public class PlayScene implements Scene
     @Override
     public void start()
     {
-        background = new Background(new Texture("bg.jpg"));
-        bird = new Bird(new Texture("bird.png"));
+        background = (Background) addObject(new Background());
+        bird = (Bird) addObject(new Bird());
+        obstacles = (Obstacles) addObject(new Obstacles());
 
         System.out.println(getClass().getName() + " started");
     }
@@ -32,8 +34,10 @@ public class PlayScene implements Scene
     @Override
     public void update()
     {
-        background.update();
-        bird.update();
+        updateGameObjects();
+
+        if(bird.getPos().y <= 150)
+            manager.open(new IntroScene(manager));
     }
 
     @Override
@@ -44,8 +48,7 @@ public class PlayScene implements Scene
 
         batch.begin();
 
-        background.render(batch);
-        bird.render(batch);
+        renderGameObjects(batch);
 
         batch.end();
     }
@@ -53,14 +56,5 @@ public class PlayScene implements Scene
     @Override
     public void resize(int width, int height)
     {
-    }
-
-    @Override
-    public void dispose()
-    {
-        System.out.println(getClass().getName() + " disposed");
-
-        background.dispose();
-        bird.dispose();
     }
 }
