@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package com.mygdx.game;
+package com.danmoop.flappyjava;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");

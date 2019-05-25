@@ -8,7 +8,7 @@ INJECTED from D:\APPS\LIBGDX\android\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\APPS\LIBGDX\android\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\APPS\LIBGDX\android\AndroidManifest.xml:2:1-24:12
 	package
-		ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:3:5-29
+		ADDED from D:\APPS\LIBGDX\android\AndroidManifest.xml:3:5-37
 		INJECTED from D:\APPS\LIBGDX\android\AndroidManifest.xml
 		INJECTED from D:\APPS\LIBGDX\android\AndroidManifest.xml
 	android:versionName

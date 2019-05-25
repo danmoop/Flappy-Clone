@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.mygdx.game;
+package com.danmoop.flappyjava;
 
 public final class R {
   public static final class color {

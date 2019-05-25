@@ -1,12 +1,19 @@
 package com.mygdx.game.GameObjects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
+import java.util.Random;
+
 public class Bird implements GameObject
 {
+    private Random random;
+
+    private final String[] BIRDS = {"bird.png", "bird2.png", "bird3.png"};
+
     private Vector2 pos;
     private Texture texture;
     private float vy = 0;
@@ -14,10 +21,13 @@ public class Bird implements GameObject
 
     public Bird()
     {
-        this.texture = new Texture("bird.png");
+        random = new Random();
+
+        this.texture = new Texture(BIRDS[random.nextInt(BIRDS.length)]);
+
         this.pos = new Vector2(
-                Gdx.graphics.getWidth() / 2f - 75f,
-                Gdx.graphics.getHeight() / 2f + 150f
+                426 / 2f - 76f,
+                653 / 2f + 150f
         );
     }
 
@@ -28,7 +38,7 @@ public class Bird implements GameObject
 
         pos.y += vy;
 
-        if(Gdx.input.justTouched() && pos.y <= Gdx.graphics.getHeight() - 75)
+        if((Gdx.input.justTouched() || Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) && pos.y <= Gdx.graphics.getHeight() - 75)
             vy = 12;
     }
 

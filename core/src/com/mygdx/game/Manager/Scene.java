@@ -38,7 +38,7 @@ public abstract class Scene
         }
     }
 
-    private void disposeGameObjects()
+    protected void disposeGameObjects()
     {
         for (GameObject sceneObject : sceneObjects)
         {

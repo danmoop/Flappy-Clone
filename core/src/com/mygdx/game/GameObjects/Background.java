@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Background implements GameObject
 {
-    private final int SPEED = 2;
+    private final float SPEED = 0.25f;
     private BackgroundComponent[] backgroundComponents;
     private Texture texture;
 
